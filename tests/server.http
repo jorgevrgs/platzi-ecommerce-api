@@ -38,3 +38,14 @@ Content-Type: application/json
 ### DELETE category
 DELETE http://localhost:8000/api/categories/22
 Content-Type: application/json
+
+
+### POST sactum/token
+POST http://localhost:8000/api/sanctum/token
+Content-Type: application/json
+
+{
+    "email": "nestor.okeefe@example.net",
+    "password": "password1",
+    "device_name": "mobile"
+}
