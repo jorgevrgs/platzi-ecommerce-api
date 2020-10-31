@@ -15,7 +15,7 @@ class CategoryControllerTest extends TestCase
         parent::setUp();
     }
 
-    public function test_index()
+    public function test_index_products()
     {
         Category::factory()->count(5)->create();
 
