@@ -52,3 +52,8 @@ Content-Type: application/json
     "password": "abcd1234",
     "device_name": "mobile"
 }
+
+### POST newsletter
+POST http://localhost:8000/api/newsletter/send
+Content-Type: application/json
+Authorization: Bearer 2|YJo67S8yZMvi2ly6rcOQBEPtxvuH9dZ8ZOaA1FBp
