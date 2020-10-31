@@ -1,9 +1,9 @@
-### GET
+### READ products
 
 GET http://localhost:8000/api/products
 
 
-### POST
+### CREATE product
 
 POST http://localhost:8000/api/products
 Content-Type: application/json
@@ -14,6 +14,27 @@ Content-Type: application/json
 }
 
 
-### DELETE
+### DELETE products
 DELETE http://localhost:8000/api/products/22
+Content-Type: application/json
+
+
+### READ categories
+
+GET http://localhost:8000/api/categories
+
+
+### CREATE category
+
+POST http://localhost:8000/api/categories
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "price": 5000
+}
+
+
+### DELETE category
+DELETE http://localhost:8000/api/categories/22
 Content-Type: application/json

@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ProductSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        Product::factory()->count(10)->crete();
+        Category::factory()->count(10)->crete();
     }
 }
