@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils\CanRate;
 use App\Models\Product;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, CanRate;
 
     /**
      * The attributes that are mass assignable.

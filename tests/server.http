@@ -2,7 +2,7 @@
 
 GET http://localhost:8000/api/products
 Content-Type: application/json
-Authorization: Bearer 1|q4CLBauUYqmuyTNsB3Tdt1Syrlv3rfCxes8p4tGn
+Authorization: Bearer 1|2TXfJFEyEolkKz3Swul0CET5IjEOhwxxbWuZaMnP
 
 
 ### CREATE product
@@ -48,7 +48,7 @@ POST http://localhost:8000/api/sanctum/token
 Content-Type: application/json
 
 {
-    "email": "demo@demo.com",
+    "email": "admin@example.com",
     "password": "abcd1234",
     "device_name": "mobile"
 }
