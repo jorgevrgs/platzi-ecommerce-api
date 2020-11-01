@@ -13,7 +13,9 @@ class SendNewsletterCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'send:newsletter {emails?*}';
+    protected $signature = 'send:newsletter
+    {emails?*: Email to send message directly}
+    {--s|schedule: Send message directly or scheduled}';
 
     /**
      * The console command description.
