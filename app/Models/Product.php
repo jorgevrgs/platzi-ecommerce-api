@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Faker\Factory;
 use App\Models\User;
 use App\Models\Category;
 use App\Utils\CanBeRated;
@@ -14,11 +15,22 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function createdBy() {
+    public function createdBy()
+    {
         return $this->belongsTo(User::class);
+    }
+
+    protected static function booted()
+    {
+        static::creating(function (Product $product) {
+            $faker = Factory::create();
+            $product->image_url = $faker->imageUrl();
+            $product->createdBy()->associate(auth()->user());
+        });
     }
 }
