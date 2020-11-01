@@ -1,8 +1,12 @@
+### CONST
+
+@authToken = 2|YJo67S8yZMvi2ly6rcOQBEPtxvuH9dZ8ZOaA1FBp
+
 ### READ products
 
-GET http://localhost:8000/api/products
+GET http://localhost:8000/api/categories
 Content-Type: application/json
-Authorization: Bearer 1|2TXfJFEyEolkKz3Swul0CET5IjEOhwxxbWuZaMnP
+Authorization: Bearer {{authToken}}
 
 
 ### CREATE product
@@ -56,4 +60,13 @@ Content-Type: application/json
 ### POST newsletter
 POST http://localhost:8000/api/newsletter/send
 Content-Type: application/json
-Authorization: Bearer 2|YJo67S8yZMvi2ly6rcOQBEPtxvuH9dZ8ZOaA1FBp
+Authorization: Bearer {{authToken}}
+
+### POST score
+POST http://localhost:8000/api/products/2/rate
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "score": 10
+}

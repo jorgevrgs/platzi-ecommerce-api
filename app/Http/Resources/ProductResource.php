@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -19,6 +20,7 @@ class ProductResource extends JsonResource
             'id' => (int) $this->id,
             'name' => (string) $this->name,
             'price' => (float) $this->price,
+            'user_rating' => $this->averageRating(User::class)
         ];
     }
 }

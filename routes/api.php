@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserTokenController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ProductRatingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,8 @@ Route::resource('categories', CategoryController::class);
 
 Route::post('sanctum/token', UserTokenController::class);
 
-Route::post('newsletter/send', [NewsletterController::class, 'send']);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('newsletter/send', [NewsletterController::class, 'send'])->name('send.newsletter');
+    Route::post('products/{product}/rate', [ProductRatingController::class, 'rate']);
+    Route::post('products/{product}/unrate', [ProductRatingController::class, 'unrate']);
+});
