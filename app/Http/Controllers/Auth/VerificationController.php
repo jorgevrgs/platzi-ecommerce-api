@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Jobs\SendWelcomeEmail;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -39,5 +40,16 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
+
+    /**
+     * The user has been verified.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function verified(Request $request)
+    {
+        dispatch(new SendWelcomeEmail($request->user()->email));
     }
 }
